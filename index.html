@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leh Adventure Wheels</title>
+    <!-- Use a simple, clean font. Tailwind's default is good. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "dark-blue": "#23253a",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .bg-hero {
+        background-image: url("https://placehold.co/1920x1080/23253a/ff6347?text=Explore+Ladakh");
+        background-size: cover;
+        background-position: center;
+      }
+      /* Custom scrollbar for a cleaner look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #23253a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ff6347;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="bg-dark-blue text-gray-300">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 bg-dark-blue shadow-sm z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-2xl font-bold text-white">
+          Leh <span class="text-[#ff6347]">Adventure</span> Wheels
+        </a>
+        <div class="hidden md:flex space-x-8 text-gray-300 font-medium">
+          <a href="#about" class="hover:text-white">About Us</a>
+          <a href="#tours" class="hover:text-white">Tours & Services</a>
+
+          <a href="#contact" class="hover:text-white">Contact Us</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-300 hover:text-white focus:outline-none"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-dark-blue shadow-lg p-4 transition-all duration-300 ease-in-out transform -translate-y-2 opacity-0"
+      >
+        <div class="flex flex-col space-y-4 font-medium">
+          <a href="#about" class="text-gray-300 hover:text-[#ff6347]"
+            >About Us</a
+          >
+          <a href="#tours" class="text-gray-300 hover:text-[#ff6347]"
+            >Tours & Services</a
+          >
+          <a href="#fleet" class="text-gray-300 hover:text-[#ff6347]"
+            >Rental Fleet</a
+          >
+          <a href="#contact" class="text-gray-300 hover:text-[#ff6347]"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-hero relative h-screen flex items-center justify-center text-center p-6"
+      >
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 max-w-2xl">
+          <div
+            class="bg-orange-500 text-dark-blue font-bold py-2 px-4 rounded-full inline-block mb-10 transform -rotate-3"
+          >
+            Get 20% off this month when you try our services!
+          </div>
+          <h1
+            class="text-5xl md:text-6xl font-extrabold text-white leading-tight"
+          >
+            Explore Leh-Ladakh in <span class="text-[#ff6347]">Comfort</span>
+          </h1>
+          <p class="mt-10 text-lg md:text-xl text-white font-light">
+            Reliable tours with local insights and stunning views.
+          </p>
+          <div
+            class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+          >
+            <a
+              href="#tours"
+              class="inline-block px-8 py-4 bg-[#ff6347] text-dark-blue font-bold rounded-full shadow-lg transition-all duration-300 hover:bg-orange-500 hover:shadow-xl transform hover:scale-105"
+            >
+              Book Your Tour
+            </a>
+            <a
+              href="https://wa.me/9596424194"
+              class="inline-block px-8 py-4 bg-dark-blue text-[#ff6347] font-bold rounded-full shadow-lg transition-all duration-300 hover:bg-gray-800 hover:shadow-xl transform hover:scale-105 border border-[#ff6347]"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about" class="container mx-auto px-6 py-20 md:py-24">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">About Us</h2>
+          <p class="mt-4 text-gray-300 text-lg md:text-xl leading-relaxed">
+            Leh Adventure Wheels is a team of passionate adventurers dedicated
+            to making your journey through the stunning landscapes of Leh-Ladakh
+            unforgettable. We provide reliable and well-maintained bikes and
+            cars, along with expertly guided tours for all levels of experience.
+            Our mission is to ensure your trip is not just a ride, but a true
+            adventure.
+          </p>
+        </div>
+      </section>
+
+      <!-- Tours & Services Section -->
+      <section id="tours" class="bg-gray-900 py-20 md:py-24">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+          >
+            Menu / Price List
+          </h2>
+
+          <!-- Local Sightseeing -->
+          <div class="mb-16">
+            <h3
+              class="text-2xl font-bold text-white mb-6 border-b-2 border-gray-700 pb-2"
+            >
+              Local Sightseeing
+            </h3>
+            <p class="text-gray-300 mb-8">
+              Explore popular Leh attractions with our experienced drivers.
+              Comfortable rides in Toyota Innova Hycross.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Shanti Stupa & Leh Palace Tour
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  Visit the iconic Shanti Stupa for panoramic views of Leh,
+                  followed by a trip to the historic Leh Palace. A quick yet
+                  enriching tour of Leh’s heritage.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 1522</p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Hall of Fame – Magnetic Hill – Pathar Sahib – Sangam Spituk
+                  Alchi Likir
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  Experience the mysterious Magnetic Hill and witness the
+                  stunning confluence of the Zanskar and Indus rivers. Ideal for
+                  nature lovers and photographers.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 5032</p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Stok Village & Museum Visit
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  Take a scenic drive to Stok Village, home to the royal Ladakhi
+                  family. Visit the Stok Museum and learn about Ladakhi heritage
+                  and culture.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 1607</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Popular Tour Packages -->
+          <div class="mb-16">
+            <h3
+              class="text-2xl font-bold text-white mb-6 border-b-2 border-gray-700 pb-2"
+            >
+              Popular Tour Packages
+            </h3>
+            <p class="text-gray-300 mb-8">
+              Explore our specially curated tour packages designed for every
+              kind of traveler. From adrenaline-filled adventures to peaceful
+              scenic retreats, find the perfect Ladakh experience.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Leh → Diskit → Hunder → Pangong via Shyok → Leh (4 Days)
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  A 4-day guided tour covering the iconic Nubra Valley and the
+                  breathtaking Pangong Lake. Includes comfortable accommodation,
+                  meals, and experienced drivers.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 34181</p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Zanskar Valley Adventure (6 Days)
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  Offbeat tour covering rugged landscapes, monasteries, and the
+                  Zanskar river. Perfect for adventurers and nature lovers.
+                </p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Tso Moriri Lake Tour (2 Days)
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  Visit the beautiful and less-crowded Tso Moriri Lake,
+                  surrounded by snow-capped peaks and Tibetan nomadic
+                  settlements.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 14276</p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Nubra Valley turtuk & Pangong Lake Tour (4 Days)
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  A scenic road trip through Khardung La to the sand dunes of
+                  Nubra Valley and the iconic Pangong Lake. Ideal for first-time
+                  visitors to Ladakh.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 42645</p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Sham Valley Tour (1–2 Days)
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  A cultural circuit covering Alchi, Likir, Basgo, and the
+                  confluence of Indus & Zanskar rivers. Great for a short
+                  historical trip.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 20552</p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Leh to Manali Road Trip
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  A breathtaking journey through high mountain passes, valleys,
+                  and rivers – ending in Manali.
+                </p>
+                <p class="mt-4 text-lg font-bold text-[#ff6347]">INR 28000</p>
+              </div>
+              <div
+                class="bg-dark-blue p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 class="text-xl font-semibold text-white">
+                  Snow Leopard Winter Expedition (7-10 Days)
+                </h4>
+                <p class="mt-2 text-gray-300">
+                  A rare chance to spot the elusive Snow Leopard in the wild
+                  with experienced trackers in Hemis National Park.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Rentals -->
+          <div class="text-center">
+            <h3
+              class="text-2xl font-bold text-white mb-6 border-b-2 border-gray-700 pb-2"
+            >
+              Custom Taxi Rentals
+            </h3>
+            <p class="text-gray-300 text-lg">
+              Plan your own route and rent with a driver by day/hour.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Us Section -->
+      <section id="contact" class="container mx-auto px-6 py-20 md:py-24">
+        <div class="max-w-xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Contact Us</h2>
+          <p class="mt-4 text-gray-300 text-lg">
+            Better yet, see us in person! We love our customers, so feel free to
+            visit during normal business hours.
+          </p>
+          <div class="mt-8 flex flex-col space-y-4">
+            <p class="text-white font-semibold">Leh Adventure Wheels</p>
+            <p class="text-white font-semibold">
+              Near leh new bus stand, Leh, LA 194101
+            </p>
+            <p class="text-white font-semibold">Phone: +91 9596424194</p>
+            <p class="text-white font-semibold">
+              Hours: Open today 09:00 am – 05:00 pm
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center space-x-6">
+          <!-- Social Media Icons (replace with real SVGs if needed) -->
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-facebook"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-instagram"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-whatsapp"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="mt-4 text-gray-500 text-sm">
+          &copy; 2025 Leh Adventure Wheels. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+          // Close mobile menu after clicking a link
+          document
+            .getElementById("mobile-menu")
+            .classList.add(
+              "hidden",
+              "transform",
+              "-translate-y-2",
+              "opacity-0"
+            );
+          document
+            .getElementById("mobile-menu-button")
+            .setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        const isExpanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true";
+        mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("transform");
+        mobileMenu.classList.toggle("-translate-y-2");
+        mobileMenu.classList.toggle("opacity-0");
+      });
+    </script>
+  </body>
+</html>
